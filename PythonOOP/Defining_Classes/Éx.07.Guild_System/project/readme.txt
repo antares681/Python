@@ -1,0 +1,1 @@
+put the project folder to root before ziping it

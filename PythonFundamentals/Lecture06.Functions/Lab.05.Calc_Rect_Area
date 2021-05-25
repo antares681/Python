@@ -1,0 +1,9 @@
+def rectangle_calculator(side_a,side_b):
+    area = side_a * side_b
+    return area
+
+a = int(input())
+b = int(input())
+
+area_size = rectangle_calculator(a,b)
+print(area_size)
