@@ -17,3 +17,12 @@ print(sorted([int(x) for x in data.split()], reverse=True))
 
 #TODO EXAMPLE 4  MAP
 
+
+
+
+
+#TODO QUESTION
+# Какъв е смисъла да се ползва:
+# list(map(lambda x: int(x), data.split())) , щом си работи чудесно без ламбда така:
+# list(map(int, data.split()))
+

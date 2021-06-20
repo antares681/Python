@@ -51,7 +51,6 @@ print(margarita.add_extra('cheese', 1, 1))
 
 import unittest
 
-
 class Tests(unittest.TestCase):
     def test_init(self):
         t = PizzaDelivery('Margarita', 12, {'cheese': 2, 'tomatoes': 1})

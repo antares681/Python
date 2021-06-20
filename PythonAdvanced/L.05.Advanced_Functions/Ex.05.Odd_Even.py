@@ -1,5 +1,5 @@
 command = input()
-numbers = list(map(lambda x: int(x), input().split()))
+numbers = list(map(int, input().split()))
 nmbrs_length = len(numbers)
 
 if command == 'Odd':

@@ -22,6 +22,11 @@ class PongBall(Widget):
     def moveBall(self):
         self.pos = Vector(*self.velocity) + self.pos
 
+##Uptate functions
+# on_touch_down() - when finger touches the screen
+# on_touch_up() - When we lift the finger to the finger
+# on_touch_move() - when we drag finger across the screen
+
 
 class PongGame(Widget):
     ball = ObjectProperty(None)

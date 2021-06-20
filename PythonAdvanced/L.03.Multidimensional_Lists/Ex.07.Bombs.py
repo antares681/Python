@@ -37,3 +37,30 @@ print(f"Alive cells: {alive_cells}")
 print(f"Sum: {alive_sum}")
 for row in matrix:
     print(*row)
+
+
+#TODO SOLUTION 2
+
+matrix = []
+for _ in range(int(input())):
+    matrix.append([int(i) for i in input().split(" ")])
+bombs = input().split(" ")
+def damage(m,row,col):
+    bomb_damage = m[row][col]
+    for i in range(row-1, row+2):
+        for j in range(col-1, col+2):
+            if not (i in range(len(matrix)) and (j in range(len(matrix)))):
+                continue
+            m[i][j] -= bomb_damage if m[i][j] > 0 else 0
+    m[row][col] = 0
+    return m
+while bombs:
+    bomb = bombs.pop(0)
+    bomb = bomb.split(",")
+    bomb_row, bomb_col = map(int,bomb)
+    if matrix[bomb_row][bomb_col] > 0:
+        matrix = damage(matrix, bomb_row, bomb_col)
+survived = [char for i in range(len(matrix)) for char in matrix[i] if char > 0]
+print(f"Alive cells: {len(survived)}")
+print(f"Sum: {sum([int(i) for i in survived])}")
+[print(*sub) for sub in matrix]

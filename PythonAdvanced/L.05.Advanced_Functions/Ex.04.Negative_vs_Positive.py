@@ -1,4 +1,5 @@
-data = list(map(lambda x: int(x), input().split()))
+data = list(map(int, input().split()))
+print(data)
 negatives = list(filter(lambda x: x < 0, data))
 print(sum(negatives))
 positives = list(filter(lambda x: x >=0, data))

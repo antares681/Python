@@ -23,3 +23,6 @@
 # multiply = lambda *args: prod(args)
 #
 # print(multiply(1, 2, 3, 4, 5))
+
+# TODO SOLUTION 5
+

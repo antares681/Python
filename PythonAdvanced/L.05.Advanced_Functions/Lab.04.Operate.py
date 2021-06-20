@@ -26,3 +26,14 @@ def operate(operator, *args):
     }
     return reduce(ops[operator], args)
 print(operate('+',*[i for i in range(100_000)]))
+
+#TODO SOLUTION 3
+
+def operate(operator, *args):
+    return reduce(lambda x, y: eval(f'{x} {operator} {y}'), args)
+
+print(operate('+', 1, 2, 3))
+
+#TODO MAPPER EXAMPLE
+
+#possible_operators = {"+": lambda x, y: x + y, "-": lambda x, y: x - y, "*": lambda x, y: x * y, "/": lambda x, y: x / y,} Това как стои ?

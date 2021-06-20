@@ -1,9 +1,9 @@
 ##TODO SOLUTION 1
 
-# data = [int(x) for x in input().split()]
-# print(f'The minimum number is {min(data)}')
-# print(f'The maximum number is {max(data)}')
-# print(f'The sum number is: {sum(data)}')
+data = [int(x) for x in input().split()]
+print(f'The minimum number is {min(data)}')
+print(f'The maximum number is {max(data)}')
+print(f'The sum number is: {sum(data)}')
 
 ##TODO SOLUTION 2
 data = input()
