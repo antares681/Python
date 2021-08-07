@@ -1,12 +1,12 @@
 # # TODO FUNCITONAL WAY OF WRITING CODE
-# def draw_rhombus(n):
-#     for i in range(n):
-#         offset = (n - i - 1) * ' '
-#         print(f'{offset}{("* " * (i + 1)).strip()}')
-#
-#     for i in range(n - 2, -1, -1):
-#         offset = (n - i - 1) * ' '
-#         print(f'{offset}{("* " * (i + 1)).strip()}')
+def draw_rhombus(n):
+    for i in range(n):
+        offset = (n - i - 1) * ' '
+        print(f'{offset}{("* " * (i + 1)).strip()}')
+
+    for i in range(n - 2, -1, -1):
+        offset = (n - i - 1) * ' '
+        print(f'{offset}{("* " * (i + 1)).strip()}')
 #
 # draw_rhombus(int(input()))
 

@@ -31,3 +31,14 @@ def solve(pizza_orders, employees_capacity):
 pizza_orders = [x for x in map(int, input().split(', ')) if x < 11 and x > 0]
 employees_capacity = [x for x in map(int, (input().split(', '))) if x >= 0]
 solve(pizza_orders, employees_capacity)
+
+#TODO TEST INPUTS
+
+# 10, 9, 8, 7, 5
+# 5, 10, 9, 8, 7
+
+
+# 12, -3, 14, 3, 2, 0
+# 10, 15, 4, 6, 3, 1, 22, 1
+
+

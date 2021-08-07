@@ -8,25 +8,24 @@ class PizzaDelivery:
         self.ordered = False
 
     def add_extra(self, ingredient: str, quantity: int, ingredient_price: float):
-        if self.ordered is True:
-            return f"Pizza {self.name} already prepared and we can't make any changes!"
+        if self.ordered:
+            return f"Pizza {self.name} already prepared, and we can't make any changes!"
         if ingredient in self.ingredients:
             self.ingredients[ingredient] += quantity
-            self.price += ingredient_price
-            return
-        self.ingredients[ingredient] = quantity
-        self.price += ingredient_price
+        else:
+            self.ingredients[ingredient] = quantity
+        self.price += ingredient_price * quantity
 
 
     def remove_ingredient(self, ingredient:str, quantity:int, ingredient_price:float):
-        if self.ordered is True:
-            return f"Pizza {self.name} already prepared and we can't make any changes!"
+        if self.ordered:
+            return f"Pizza {self.name} already prepared, and we can't make any changes!"
         if not ingredient in self.ingredients:
             return f"Wrong ingredient selected! We do not use {ingredient} in {self.name}!"
         if self.ingredients[ingredient] - quantity < 0:
             return f"Please check again the desired quantity of {ingredient}!"
         if self.ingredients[ingredient] - quantity >= 0:
-            self.price -= ingredient_price
+            self.price -= ingredient_price *quantity
             self.ingredients[ingredient] -= quantity
 
     def make_order(self):
@@ -34,7 +33,7 @@ class PizzaDelivery:
         x = [chain([k, v]) for k, v, in self.ingredients.items()]
         ingrd_to_prn = []
         for el in x:
-            x,y = el
+            x, y = el
             ingrd_to_prn.append(f'{x}: {y}')
         return f"You've ordered pizza {self.name} prepared with {', '.join(ingrd_to_prn)} and the price will be {self.price}lv."
 
@@ -50,6 +49,7 @@ print(margarita.make_order())
 print(margarita.add_extra('cheese', 1, 1))
 
 import unittest
+
 
 class Tests(unittest.TestCase):
     def test_init(self):
@@ -102,7 +102,7 @@ class Tests(unittest.TestCase):
         result = t.add_extra('mozzarella', 1, 2)
         self.assertEqual(order,
                          "You've ordered pizza Margarita prepared with cheese: 2, tomatoes: 1 and the price will be 12lv.")
-        self.assertEqual(result, "Pizza Margarita already prepared and we can't make any changes!")
+        self.assertEqual(result, "Pizza Margarita already prepared, and we can't make any changes!")
 
     def test_remove_ingredient_after_pizza_is_ordered_should_return_message(self):
         t = PizzaDelivery('Margarita', 12, {'cheese': 2, 'tomatoes': 1})
@@ -110,7 +110,7 @@ class Tests(unittest.TestCase):
         result = t.remove_ingredient('mozzarella', 1, 2)
         self.assertEqual(order,
                          "You've ordered pizza Margarita prepared with cheese: 2, tomatoes: 1 and the price will be 12lv.")
-        self.assertEqual(result, "Pizza Margarita already prepared and we can't make any changes!")
+        self.assertEqual(result, "Pizza Margarita already prepared, and we can't make any changes!")
 
 
 if __name__ == "__main__":
