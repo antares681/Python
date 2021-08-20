@@ -1,4 +1,4 @@
-from project.player import Player
+from Ex05_Shop.player import Player
 
 
 class Guild:

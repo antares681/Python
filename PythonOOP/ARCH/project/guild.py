@@ -35,8 +35,8 @@ print(guild.assign_player(player_1))
 print(guild.guild_info())
 
 
-from project.player import Player
-from project.guild import Guild
+from Ex05_Shop.player import Player
+from Ex05_Shop.guild import Guild
 
 import unittest
 
